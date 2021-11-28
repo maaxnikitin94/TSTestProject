@@ -1,0 +1,38 @@
+.container {
+    margin: 0 auto;
+    width: 1000px;
+    height: 700px;
+}
+
+.forBlocks {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.myBlock1,.myBlock2,.myBlock3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.myBlock1 {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+}
+
+.myBlock2 {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+}
+
+.myBlock3 {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+}
