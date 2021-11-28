@@ -16,12 +16,14 @@
 .my-block1,.my-block2,.my-block3{
     cursor: pointer;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
     font-size: 25px;
+    transition: margin-top 0.3s ease-out;
 }
 .for-toggle-blocks{
-    align-self: flex-end;
+    /*align-self: flex-end;*/
+    margin-top: 50%;
 }
 
 .my-block1 {

@@ -1,3 +1,4 @@
+"use strict";
 //DOM-элементы в переменные
 let Block1_elem = document.querySelector('.my-block1');
 let Block2_elem = document.querySelector('.my-block2');
@@ -17,7 +18,7 @@ var MyBlocks;
                 throw new Error('Incorrect elements count');
             }
         }
-        handleClick() {
+        handleClickDownUp() {
             this.name.forEach((item) => item.addEventListener('click', (event) => {
                 item.classList.toggle('for-toggle-blocks');
             }));
@@ -27,5 +28,5 @@ var MyBlocks;
 })(MyBlocks || (MyBlocks = {}));
 let blocksEdit = new MyBlocks.BlocksEdit([Block1_elem, Block2_elem, Block3_elem]);
 blocksEdit.editText(['BMW', 'MERCEDES', 'AUDI']);
-blocksEdit.handleClick();
+blocksEdit.handleClickDownUp();
 //# sourceMappingURL=bundle.js.map
