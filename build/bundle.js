@@ -1,24 +1,31 @@
 //DOM-элементы в переменные
-let Block1_elem = document.querySelector('.myBlock1');
-let Block2_elem = document.querySelector('.myBlock2');
-let Block3_elem = document.querySelector('.myBlock3');
+let Block1_elem = document.querySelector('.my-block1');
+let Block2_elem = document.querySelector('.my-block2');
+let Block3_elem = document.querySelector('.my-block3');
+//Работа с блоками
 var MyBlocks;
 (function (MyBlocks) {
-    class TextEdit {
-        constructor(name, text) {
+    class BlocksEdit {
+        constructor(name) {
             this.name = name;
-            this.text = text;
         }
-        edit() {
-            this.name.innerHTML = this.text;
+        editText(text) {
+            if (this.name.length === text.length) {
+                this.name.forEach((item, index) => item.innerText = text[index]);
+            }
+            else {
+                throw new Error('Incorrect elements count');
+            }
+        }
+        handleClick() {
+            this.name.forEach((item) => item.addEventListener('click', (event) => {
+                item.classList.toggle('for-toggle-blocks');
+            }));
         }
     }
-    MyBlocks.TextEdit = TextEdit;
+    MyBlocks.BlocksEdit = BlocksEdit;
 })(MyBlocks || (MyBlocks = {}));
-let block1 = new MyBlocks.TextEdit(Block1_elem, 'BMW');
-let block2 = new MyBlocks.TextEdit(Block2_elem, 'AUDI');
-let block3 = new MyBlocks.TextEdit(Block3_elem, 'MERCEDES');
-block1.edit();
-block2.edit();
-block3.edit();
+let blocksEdit = new MyBlocks.BlocksEdit([Block1_elem, Block2_elem, Block3_elem]);
+blocksEdit.editText(['BMW', 'MERCEDES', 'AUDI']);
+blocksEdit.handleClick();
 //# sourceMappingURL=bundle.js.map
